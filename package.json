@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "vite build && rm -rf docs/* && cp -r dist/* docs/"
+    "deploy": "npm run build && rmdir /s /q docs && xcopy dist docs /E /I /Y"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

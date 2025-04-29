@@ -1,19 +1,19 @@
 /* contact.css */
 
 .contact-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f4f4f4;
-    width: 100%;
-    max-width: 600px; 
-    margin: 60px auto;
-  }
-  
-  .contact-box {
-    max-width: 650px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  width: 100%;
+  max-width: 600px;
+  margin: 60px auto;
+}
+
+.contact-box {
+  max-width: 650px;
   width: 100%;
   background-color: #ffffff;
   padding: 40px 30px;
@@ -22,63 +22,65 @@
   text-align: center;
   animation: fadeIn 1.2s ease forwards;
   opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-  }
-  
-  p.description {
-    color: var(--gray);
-    margin-bottom: 30px;
-    font-size: 1em;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  input, textarea {
-    padding: 12px 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: border-color 0.3s;
-    resize: none;
-  }
-  
-  input:focus, textarea:focus {
-    border-color: var(--accent-red);
-    outline: none;
-  }
-  
-  button {
-    background-color: var(--accent-red);
-    color: var(--white);
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #d85a3b;
-  }
-  
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+p.description {
+  color: var(--gray);
+  margin-bottom: 30px;
+  font-size: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input,
+textarea {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent-red);
+  outline: none;
+}
+
+button {
+  background-color: var(--accent-red);
+  color: var(--white);
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d85a3b;
+}
