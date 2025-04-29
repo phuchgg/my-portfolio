@@ -1,8 +1,10 @@
+import { maxImage } from "../assets/images";
+
 function Home() {
     return (
       <main>
         <section className="hero">
-          <img src="src/images/Max.png" alt="Max Nguyen" />
+          <img src={maxImage} alt="Max Nguyen" />
           <div className="intro">
             <h1>Hello</h1>
             <h3>A Bit About Me</h3>

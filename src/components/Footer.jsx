@@ -1,3 +1,5 @@
+import { zaloIcon, facebookIcon } from '../assets/images';
+
 function Footer() {
     return (
       <footer>
@@ -11,8 +13,8 @@ function Footer() {
         </div>
         <div>
           <strong className="social-title">Follow Me</strong><br />
-          <a href="https://zalo.me/0704428062"><img src="src/images/zalo.png" alt="Zalo" /></a>
-          <a href="https://www.facebook.com/maximumz160/"><img src="src/images/facebook.png" alt="Facebook" /></a>
+          <a href="https://zalo.me/0704428062"><img src={zaloIcon} alt="Zalo" /></a>
+          <a href="https://www.facebook.com/maximumz160/"><img src={facebookIcon} alt="Facebook" /></a>
         </div>
         <div>
           &copy; {new Date().getFullYear()} Max Hoang. Powered with love.
