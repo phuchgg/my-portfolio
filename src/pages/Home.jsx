@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function Home() {
     return (
       <main>
         <section className="hero">
-          <img src="/my-portfolio/Max.png" alt="Max Nguyen" />
+          <img src="/Max.png" alt="Max Nguyen" />
           <div className="intro">
             <h1>Hello</h1>
             <h3>A Bit About Me</h3>
@@ -12,7 +14,7 @@ function Home() {
             <div className="buttons">
               <a href="https://www.linkedin.com/in/phuc-hgg/" className="resume">Resume</a>
               <a href="https://github.com/phuchgg" className="projects">Projects</a>
-              <a href="/contact" className="contact">Contact</a>
+              <Link to="/contact" className="contact">Contact</Link>
             </div>
           </div>
         </section>
