@@ -6,15 +6,15 @@ function Home() {
         <section className="hero">
           <img src="/images/Max.png" alt="Max Nguyen" />
           <div className="intro">
-            <h1>Hello</h1>
-            <h3>A Bit About Me</h3>
+            <h1>Xin chào</h1>
+            <h3>Vài dòng không deep nhưng real</h3>
             <p>
-              I'm an IELTS teacher, passionate about tech, psychology, and creativity. I love connecting data with human stories, and guiding learners to reach their goals.<br />
+            Xin chào, mình là giáo viên IELTS có tâm, mê công nghệ, ghiền tâm lý, thích sáng tạo, giỏi "bốc phét" số liệu thành câu chuyện đời thường. Nhiệm vụ của mình là đưa học trò qua hết "ải IELTS", và thi thoảng đưa bản thân thoát khỏi vòng lặp code bug và tâm lý "overthinking"! 😉<br />
             </p>
             <div className="buttons">
               <a href="https://www.linkedin.com/in/phuc-hgg/" className="resume">Resume</a>
-              <a href="https://github.com/phuchgg" className="projects">Projects</a>
-              <Link to="/contact" className="contact">Contact</Link>
+              <a href="https://github.com/phuchgg" className="projects">Dự án</a>
+              <Link to="/contact" className="contact">Liên hệ</Link>
             </div>
           </div>
         </section>

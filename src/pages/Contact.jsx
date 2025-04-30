@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
-import '../css/contact.css'; // Link CSS nha Max!
+import '../css/contact.css';
 
 function Contact() {
   const form = useRef();
@@ -20,13 +20,13 @@ function Contact() {
     <main>
       <section className="contact-wrapper">
         <div className="contact-box">
-          <h1>Contact Me</h1>
-          <p className="description">Feel free to drop me a message!</p>
+          <h1>Inbox tui đi chờ chi!</h1>
+          <p className="description">Cam kết không seen rồi để đó.</p>
           <form ref={form} onSubmit={sendEmail}>
-            <input type="text" name="user_name" placeholder="Your Name" required />
-            <input type="email" name="user_email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
+            <input type="text" name="user_name" placeholder="Tên của ní" required />
+            <input type="email" name="user_email" placeholder="Email ne" required />
+            <textarea name="message" placeholder="E hèm hỏi giề" rows="5" required></textarea>
+            <button type="submit">Quăng nhẹ cái tin</button>
           </form>
         </div>
       </section>

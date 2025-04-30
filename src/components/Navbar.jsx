@@ -4,6 +4,10 @@ import { useState } from 'react';
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setMenuOpen(false); // 👈 Tự đóng menu khi click bất kỳ link nào
+  };
+
   return (
     <header>
       <Link to="/" className="logo">
@@ -12,16 +16,19 @@ function Navbar() {
         <span className="role">Educator</span>
       </Link>
 
-      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+      <div
+        className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         <span></span>
         <span></span>
         <span></span>
       </div>
 
       <nav className={`navbar ${menuOpen ? 'active' : ''}`}>
-        <Link to="https://www.linkedin.com/in/phuc-hgg/">Resume</Link>
-        <Link to="https://github.com/phuchgg">Projects</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="https://www.linkedin.com/in/phuc-hgg/" onClick={handleLinkClick}>Resume</Link>
+        <Link to="https://github.com/phuchgg" onClick={handleLinkClick}>Dự án</Link>
+        <Link to="/contact" onClick={handleLinkClick}>Liên hệ</Link>
       </nav>
     </header>
   );

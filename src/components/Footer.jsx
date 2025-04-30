@@ -2,7 +2,7 @@ function Footer() {
     return (
       <footer>
         <div>
-          <strong className="social-title">Phone</strong><br />
+          <strong className="social-title">Số điện thoại</strong><br />
           <a href="tel:0704428062">070-4428-062</a>
         </div>
         <div>
@@ -10,7 +10,7 @@ function Footer() {
           <a href="mailto:maximumz160@gmail.com">maximumz160@gmail.com</a>
         </div>
         <div>
-          <strong className="social-title">Follow Me</strong><br />
+          <strong className="social-title">Follow tui</strong><br />
           <a href="https://zalo.me/0704428062"><img src="/images/zalo.png" alt="Zalo" /></a>
           <a href="https://www.facebook.com/maximumz160/"><img src="/images/facebook.png" alt="Facebook" /></a>
         </div>
