@@ -1,154 +1,164 @@
 .chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #444;
-    color: white;
-    font-size: 24px;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    cursor: pointer;
-    z-index: 999;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  }
-  
-  .chat-window {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 320px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    font-family: "Segoe UI", sans-serif;
-  }
-  
-  .chat-header {
-    background-color: #f0f2f5;
-    color: #111;
-    padding: 12px 14px;
-    font-weight: bold;
-    font-size: 16px;
-    display: flex;
-    align-items: center; /* 👈 canh giữa cả dòng chữ + nút */
-    justify-content: space-between;
-  }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #444;
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  user-select: none;
+  /* 🔒 không cho bôi xanh */
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  /* 💡 iOS/Chrome tap */
+  outline: none;
+}
 
-  .chat-header button {
-    background-color: #f0f2f5;
-    color: #333;
-    border: none;
-    border-radius: 6px;
-    width: 36px;              /* 👉 to hơn */
-    height: 36px;
-    font-size: 18px;          /* 👉 rõ ràng hơn */
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: none;
-    display: flex;            /* 👉 căn giữa icon */
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-  
-  
-  .chat-header button:hover {
-    background-color: #f0f2f5; /* ❌ giữ nguyên, không đổi màu */
-  }
-  
-  
-  .chat-body {
-    flex-grow: 1;
-    padding: 10px;
-    overflow-y: auto;
-    max-height: 300px;
-    font-size: 14px;
-    background: white;
-  }
-  
-  .chat-footer {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background: white;
-  }
-  
-  .bubble {
-    background-color: #f0f2f5;
-    border-radius: 18px;
-    padding: 10px 15px;
-    max-width: 75%;
-    word-break: break-word;
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-  
-  .bubble.user {
-    background-color: white;
-    border: 1px solid #cce0ff;
-    border-radius: 8px;
-    padding: 10px;
-    color: #1c1e21;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    max-width: 75%;
-    margin-left: auto;      
-    text-align: left;
-  }
-  
-  
-  
-  .bubble.bot {
-    background-color: #f0f2f5;
-    align-self: flex-start;
-  }
-  
-  .option-button {
-    padding: 10px;
-    background-color: white;
-    border: 1px solid #cce0ff;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: left;
-    transition: background-color 0.2s ease;
-    font-size: 14px;
-    color: #1c1e21;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  }
-  
-  .option-button:hover {
-    background-color: #f0f8ff;
-  }
+.chat-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", sans-serif;
+}
 
-  .avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 6px;
-  }
-  
-  .msg-row {
-    display: flex;
-    align-items: center; /* 👈 Canh avatar & bubble cùng trục giữa */
-    margin-bottom: 10px;
-  }
-  
-  .msg-row.user {
-    justify-content: flex-end;
-    flex-direction: row-reverse;
-    width: 100%;  
-  }
-  
-  .msg-row.bot {
-    justify-content: flex-start;
-  }
-  
-  
+.chat-header {
+  background-color: #f0f2f5;
+  color: #111;
+  padding: 12px 14px;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  /* 👈 canh giữa cả dòng chữ + nút */
+  justify-content: space-between;
+}
+
+.chat-header button {
+  background-color: #f0f2f5;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  width: 36px;
+  /* 👉 to hơn */
+  height: 36px;
+  font-size: 18px;
+  /* 👉 rõ ràng hơn */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: none;
+  display: flex;
+  /* 👉 căn giữa icon */
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+
+.chat-header button:hover {
+  background-color: #f0f2f5;
+  /* ❌ giữ nguyên, không đổi màu */
+}
+
+
+.chat-body {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 300px;
+  font-size: 14px;
+  background: white;
+}
+
+.chat-footer {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
+}
+
+.bubble {
+  background-color: #f0f2f5;
+  border-radius: 18px;
+  padding: 10px 15px;
+  max-width: 75%;
+  word-break: break-word;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.bubble.user {
+  background-color: white;
+  border: 1px solid #cce0ff;
+  border-radius: 8px;
+  padding: 10px;
+  color: #1c1e21;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  max-width: 75%;
+  margin-left: auto;
+  text-align: left;
+}
+
+
+
+.bubble.bot {
+  background-color: #f0f2f5;
+  align-self: flex-start;
+}
+
+.option-button {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #cce0ff;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  color: #1c1e21;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.option-button:hover {
+  background-color: #f0f8ff;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 6px;
+}
+
+.msg-row {
+  display: flex;
+  align-items: center;
+  /* 👈 Canh avatar & bubble cùng trục giữa */
+  margin-bottom: 10px;
+}
+
+.msg-row.user {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+.msg-row.bot {
+  justify-content: flex-start;
+}
