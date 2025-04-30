@@ -4,7 +4,7 @@ function Home() {
     return (
       <main>
         <section className="hero">
-          <img src="/images/Max.png" alt="Max Nguyen" />
+          <img src="/images/Max.jpg" alt="Max Hoang" />
           <div className="intro">
             <h1>Xin chào</h1>
             <h3>Vài dòng không deep nhưng real</h3>
