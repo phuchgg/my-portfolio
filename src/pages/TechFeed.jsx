@@ -5,21 +5,22 @@ import "../css/techfeed.css";
 const getDefaultThumb = (feedName) => {
   switch (feedName) {
     case "VNExpress":
-      return "/images/mit_news.jpeg";
+      return "/images/VNExpress-logo.jpg";
     default:
       return "/images/default_thumb.jpg";
   }
 };
 
 const rssFeeds = [
-  { name: "VNExpress", icon: "📰", url: "https://vnexpress.net/rss/tin-moi-nhat.rss" },
   { name: "EdSurge", icon: "🎓", url: "https://www.edsurge.com/rss" },
+  { name: "AI Business", icon: "🤖", url: "https://aibusiness.com/rss.xml" },
+  { name: "Techspot", icon: "🚀", url: "https://www.techspot.com/backend.xml" },
+  { name: "BBC Football", icon: "⚽", url: "https://feeds.bbci.co.uk/sport/football/rss.xml" },
   { name: "IGN Gaming", icon: "🎮", url: "https://feeds.ign.com/ign/all" },
   { name: "Rock Paper Shotgun", icon: "👾", url: "https://www.rockpapershotgun.com/feed" },
-  { name: "Techspot", icon: "🚀", url: "https://www.techspot.com/backend.xml" },
   { name: "Make Use Of", icon: "🧰", url: "https://makeuseof.com/feed" },
-  { name: "AI Business", icon: "🤖", url: "https://aibusiness.com/rss.xml" },
   { name: "Psyche", icon: "🧠", url: "https://psyche.co/feed.rss" },
+  { name: "VNExpress", icon: "📰", url: "https://vnexpress.net/rss/tin-moi-nhat.rss" },
 ];
 
 const extractFirstImage = (htmlContent) => {
