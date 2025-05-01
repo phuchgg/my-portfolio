@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "../css/techfeed.css";
 
@@ -6,11 +6,13 @@ const getDefaultThumb = (feedName) => {
   switch (feedName) {
     case "VNExpress":
       return "/images/mit_news.jpeg";
+    default:
+      return "/images/default_thumb.jpg";
   }
 };
 
 const rssFeeds = [
-  { name: "VNExpress", icon: "📰", url: "https://vnexpress.net/rss/tin-moi-nhat.rss"},
+  { name: "VNExpress", icon: "📰", url: "https://vnexpress.net/rss/tin-moi-nhat.rss" },
   { name: "EdSurge", icon: "🎓", url: "https://www.edsurge.com/rss" },
   { name: "IGN Gaming", icon: "🎮", url: "https://feeds.ign.com/ign/all" },
   { name: "Rock Paper Shotgun", icon: "👾", url: "https://www.rockpapershotgun.com/feed" },
@@ -22,7 +24,7 @@ const rssFeeds = [
 
 const extractFirstImage = (htmlContent) => {
   if (!htmlContent) return null;
-  const match = htmlContent.match(/<img[^>]+src="([^">]+)"/);
+  const match = htmlContent.match(/<img[^>]+src=\"([^">]+)\"/);
   return match ? match[1] : null;
 };
 
@@ -30,6 +32,7 @@ const TechFeed = () => {
   const [feeds, setFeeds] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
   const activeFeed = feeds[activeTab];
+  const feedTabsRef = useRef(null);
 
   useEffect(() => {
     const fetchFeeds = async () => {
@@ -45,7 +48,7 @@ const TechFeed = () => {
                 icon: feed.icon,
                 items: res.data.items
                   .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
-                  .slice(0, 6)
+                  .slice(0, 6),
               };
             } catch (err) {
               console.warn(`❌ Lỗi khi fetch ${feed.name}:`, err.message);
@@ -62,29 +65,36 @@ const TechFeed = () => {
     fetchFeeds();
   }, []);
 
+  const scrollTabs = (dir) => {
+    if (!feedTabsRef.current) return;
+    feedTabsRef.current.scrollBy({ left: dir * 150, behavior: "smooth" });
+  };
+
   return (
     <div className="techfeed-container">
-
-      <div className="feed-tabs">
-        {rssFeeds.map((feed, idx) => (
-          <button
-            key={feed.name}
-            className={`feed-tab ${activeTab === idx ? "active" : ""}`}
-            onClick={() => setActiveTab(idx)}
-          >
-            {feed.icon} {feed.name}
-          </button>
-        ))}
+      <div className="feed-tabs-wrapper">
+        <div className="feed-tabs" ref={feedTabsRef}>
+          {rssFeeds.map((feed, idx) => (
+            <button
+              key={feed.name}
+              className={`feed-tab ${activeTab === idx ? "active" : ""}`}
+              onClick={() => setActiveTab(idx)}
+            >
+              {feed.icon} {feed.name}
+            </button>
+          ))}
+        </div>
       </div>
 
-      
       <div className="feed-grid">
         {(feeds[activeTab]?.items || []).map((item, idx) => {
           const contentHtml = item.content || item.description;
-          const thumb = item.thumbnail || item.enclosure?.link || extractFirstImage(contentHtml) || getDefaultThumb(activeFeed?.name);
+          const thumb =
+            item.thumbnail ||
+            item.enclosure?.link ||
+            extractFirstImage(contentHtml) ||
+            getDefaultThumb(activeFeed?.name);
 
-
-          
           return (
             <a
               key={idx}
@@ -93,11 +103,7 @@ const TechFeed = () => {
               rel="noopener noreferrer"
               className="feed-card"
             >
-              <img
-                src={thumb}
-                alt="thumb"
-                className="feed-thumb"
-              />
+              <img src={thumb} alt="thumb" className="feed-thumb" />
               <div className="feed-meta">
                 <h2 className="feed-title">{item.title}</h2>
                 <p className="feed-desc">
@@ -110,7 +116,6 @@ const TechFeed = () => {
             </a>
           );
         })}
-
 
         {feeds[activeFeed]?.items.length === 0 && (
           <p className="feed-empty">Không có bài viết nào.</p>

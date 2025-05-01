@@ -119,3 +119,36 @@ body {
     object-fit: cover;
 
   }
+
+  /* Responsive fix cho tab scroll mobile */
+@media (max-width: 768px) {
+    .feed-tabs {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 8px;
+        scroll-behavior: smooth;
+        padding: 4px 12px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100vw;
+        box-sizing: border-box;
+      }
+      
+      .feed-tabs::-webkit-scrollbar {
+        display: none;
+      }
+  
+    .feed-tab {
+      font-size: 0.95rem;
+      padding: 0.4rem 0.75rem;
+    }
+  
+    .feed-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .feed-card {
+      min-height: 380px;
+    }
+  }
