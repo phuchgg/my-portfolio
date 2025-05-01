@@ -57,34 +57,9 @@ const conversationFlow = {
 
     // 🎲 TEST NHÂN PHẨM
     ieltsLuckTest: {
-        text: "Hên xui IELTS hôm nay sao nè, chọn lẹ số đẹp đo nhân phẩm liền! 😜",
-        options: [
-            { label: "1", next: "luck1" },
-            { label: "3", next: "luck3" },
-            { label: "6", next: "luck6" },
-            { label: "7", next: "luck7" },
-            { label: "9", next: "luck9" }
-        ]
-    },
-    luck1: {
-        text: "Bạn chọn số 1 tức là xác định hôm nay thi nghe cứ như 'đàn gảy tai trâu' 🥲.",
-        options: []
-    },
-    luck3: {
-        text: "Chọn số 3 nghĩa là xác suất bạn 'hên' IELTS hôm nay còn cao hơn xác suất crush rep tin nhắn nữa cơ! 😘",
-        options: []
-    },
-    luck6: {
-        text: "Hôm nay khả năng IELTS của bạn lên xuống thất thường như giá bitcoin vậy đó, cẩn thận nha 🤓.",
-        options: []
-    },
-    luck7: {
-        text: "Số đẹp quá ha! Band cao thiệt đó, nhưng nhớ đừng đọc 'think' thành 'thinh' nha má 🤭.",
-        options: []
-    },
-    luck9: {
-        text: "Số này dành cho người xuất chúng. Nhưng viết sai grammar thì vẫn 'xuất chuồng' như thường nha bạn 😂.",
-        options: []
+        text: "Đang bói điểm giúp bạn... 🔮✨",
+        options: [],
+        isFortuneGame: true // dùng flag này để render game mini thay vì hiển thị text như bình thường
     },
 
     // 🌀 HỎI XOÁY ĐÁP XÀM
@@ -136,64 +111,117 @@ const conversationFlow = {
 export default function ChatWindow({ onClose }) {
     const [messages, setMessages] = useState([{ sender: 'bot', text: conversationFlow.start.text }]);
     const [options, setOptions] = useState(conversationFlow.start.options);
+    const [usedStartOptions, setUsedStartOptions] = useState([]);
+    const [usedPaths, setUsedPaths] = useState([]);
     const messagesEndRef = useRef(null);
-
+  
     const handleOptionClick = (option) => {
-        const nextNode = conversationFlow[option.next];
-        if (!nextNode) return;
-
-        const userMessage = { sender: 'user', text: option.label };
-        const botReply = { sender: 'bot', text: nextNode.text };
-
-        const lastMsg = messages[messages.length - 1];
-        if (lastMsg?.text === botReply.text) return;
-
-        setMessages((prev) => [...prev, userMessage, botReply]);
-
-        // Lọc các nút còn lại sau khi chọn
-        const allOptions = conversationFlow.start.options;
-        const remainingOptions = allOptions.filter((opt) => opt.label !== option.label);
-        const nextOptions = nextNode.options?.length ? nextNode.options : remainingOptions;
-
-        setOptions(nextOptions);
-    };
-
-    useEffect(() => {
-        if (messagesEndRef.current) {
-            messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+      const nextNode = conversationFlow[option.next];
+      if (!nextNode) return;
+  
+      const userMessage = { sender: 'user', text: option.label };
+      const botReply = { sender: 'bot', text: nextNode.text };
+  
+      setMessages((prev) => [...prev, userMessage, botReply]);
+  
+      // Nếu là node con (quick1, funny2...) thì ghi nhận nó
+      setUsedPaths(prev => [...prev, option.next]);
+  
+      // Nếu là node mẹ (từ start) thì chỉ ẩn khi đã chọn hết con của nó (nếu có)
+      const childOptions = nextNode.options || [];
+      const allUsed = childOptions.length === 0 || childOptions.every(opt => usedPaths.includes(opt.next));
+  
+      if (conversationFlow.start.options.find(opt => opt.label === option.label)) {
+        if (allUsed) {
+          setUsedStartOptions(prev => [...prev, option.label]);
         }
-    }, [messages]);
-
+      }
+  
+      // Trường hợp bói điểm
+      if (nextNode.isFortuneGame) {
+        setMessages(prev => [
+          ...prev,
+          userMessage,
+          { sender: 'bot', text: "Đang bói điểm giúp bạn... ✨🔮" }
+        ]);
+        setOptions([]);
+  
+        setTimeout(() => {
+          const results = [
+            { band: 4.5, msg: 'Nghe rõ, hiểu chậm, viết sai chính tả liên tục. Nhưng được cái... có cố gắng 😅' },
+            { band: 5.0, msg: 'Ngữ pháp như lúa non, phát âm như tiếng gà gáy... nhưng có tố chất tiềm ẩn 🐣' },
+            { band: 5.5, msg: 'Chiến sĩ học nhóm, gánh team về phần nghe. Cần “buff” thêm từ vựng nha 💪' },
+            { band: 6.0, msg: 'Trả lời đúng đề, có idea rõ ràng, nhưng... vẫn hay bị giám khảo hỏi lại 😬' },
+            { band: 6.5, msg: 'Ổn áp! Dính “and... and... and then” hơi nhiều, nhưng tinh thần rất IELTS 🧠' },
+            { band: 7.0, msg: 'Thần thái band 7, nói rõ ràng, viết logic. Chỉ thiếu 1 chút “collocation thần thánh” ✍️' },
+            { band: 7.5, msg: 'Gần tới đỉnh rồi. Phản xạ tốt, từ vựng khá. Chỉ cần đừng “so” everything là ổn 😂' },
+            { band: 8.0, msg: 'Chúc mừng thần học! Band 8 là chuyện nhỏ với bạn. Nói chuyện như TED Talk 🎤' },
+            { band: 8.5, msg: 'Bạn đang bước vào vùng “band cao thủ” rồi đó. Nên xem lại phát âm của từ “genre” thôi 😎' },
+            { band: 9.0, msg: 'Huyền thoại sống. Giám khảo còn nhờ bạn dạy lại phần Speaking Part 3 😲' }
+          ];
+          const result = results[Math.floor(Math.random() * results.length)];
+  
+          setMessages(prev => [
+            ...prev,
+            { sender: 'bot', text: `🎲 Bạn bốc được: Band ${result.band}!\n${result.msg}` }
+          ]);
+  
+          const remaining = conversationFlow.start.options.filter(
+            opt => !usedStartOptions.includes(opt.label)
+          );
+          setOptions(remaining);
+        }, 1800);
+        return;
+      }
+  
+      const nextOpts = nextNode.options?.length
+        ? nextNode.options
+        : conversationFlow.start.options.filter(opt => !usedStartOptions.includes(opt.label));
+  
+      setOptions(nextOpts);
+    };
+  
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+          if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          if (chatBodyRef.current) {
+            chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+          }
+        }, 100);
+        return () => clearTimeout(timeout);
+      }, [messages]);
+      
+  
     return (
-        <div className="chat-window">
-            <div className="chat-header">
-                <span>Mắc hỏi</span>
-                <button onClick={onClose}>×</button>
-            </div>
-            <div className="chat-body">
-                {messages.map((msg, i) => (
-                    <div key={i} className={`msg-row ${msg.sender}`}>
-                        <img
-                            src={msg.sender === 'user' ? '/images/user-icon.png' : '/images/bot-icon.png'}
-                            alt="avatar"
-                            className="avatar"
-                        />
-                        <div className={`bubble ${msg.sender}`}>
-                            {parseMessageWithLinks(msg.text)}
-                        </div>
-
-                    </div>
-                ))}
-
-                <div ref={messagesEndRef} />
-            </div>
-            <div className="chat-footer">
-                {options.map((opt, i) => (
-                    <button key={i} className="option-button" onClick={() => handleOptionClick(opt)}>
-                        {opt.label}
-                    </button>
-                ))}
-            </div>
+      <div className="chat-window">
+        <div className="chat-header">
+          <span>Mắc hỏi</span>
+          <button onClick={onClose}>×</button>
         </div>
+        <div className="chat-body">
+          {messages.map((msg, i) => (
+            <div key={i} className={`msg-row ${msg.sender}`}>
+              <img
+                src={msg.sender === 'user' ? '/images/user-icon.png' : '/images/bot-icon.png'}
+                alt="avatar"
+                className="avatar"
+              />
+              <div className={`bubble ${msg.sender}`}>{parseMessageWithLinks(msg.text)}</div>
+            </div>
+          ))}
+          <div ref={messagesEndRef} style={{ float: 'left', clear: 'both', height: 0 }} />
+        </div>
+        <div className={`chat-footer ${options.length <= 2 ? 'push-bottom' : ''}`}>
+
+        {options.map((opt, i) => (
+          <button key={i} className="option-button" onClick={() => handleOptionClick(opt)}>
+            {opt.label}
+          </button>
+        ))}
+      </div>
+      </div>
     );
-}
+  }
+  

@@ -26,6 +26,8 @@
   bottom: 90px;
   right: 20px;
   width: 320px;
+  max-height: 80vh; 
+  min-height: 500px;            /* 📏 Giới hạn chiều cao */          /* 📏 Giới hạn chiều cao */
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -79,9 +81,11 @@
   flex-grow: 1;
   padding: 10px;
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 450px;
   font-size: 14px;
   background: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-footer {
@@ -90,7 +94,13 @@
   flex-direction: column;
   gap: 8px;
   background: white;
+  margin-top: auto;
 }
+
+.chat-footer.push-bottom {
+  margin-top: auto;
+}
+
 
 .bubble {
   background-color: #f0f2f5;
