@@ -173,23 +173,3 @@
 .msg-row.bot {
   justify-content: flex-start;
 }
-
-@media (max-width: 600px) {
-  .chat-window {
-    width: 100vw;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    border-radius: 0;
-    max-height: 90vh;
-    min-height: 80vh;
-  }
-
-  .chat-body {
-    max-height: 60vh;
-  }
-
-  .chat-footer {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-}
