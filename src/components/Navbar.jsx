@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 
+
 function Navbar() {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLinkClick = () => {
@@ -29,6 +31,7 @@ function Navbar() {
         <Link to="https://www.linkedin.com/in/phuc-hgg/" onClick={handleLinkClick}>Resume</Link>
         <Link to="https://github.com/phuchgg" onClick={handleLinkClick}>Dự án</Link>
         <Link to="/contact" onClick={handleLinkClick}>Liên hệ</Link>
+        <Link to="/tin-cong-nghe" onClick={handleLinkClick}>Tin Công Nghệ</Link>
       </nav>
     </header>
   );
