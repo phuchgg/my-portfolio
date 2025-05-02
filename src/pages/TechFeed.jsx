@@ -48,7 +48,7 @@ const TechFeed = () => {
           rssFeeds.map(async (feed) => {
             try {
               const res = await axios.get(
-                `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`
+                `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&t=${Date.now()}`
               );
               return {
                 name: feed.name,
