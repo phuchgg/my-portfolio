@@ -24,7 +24,7 @@ const rssFeeds = [
   { name: "Psyche", icon: "🧠", url: "https://psyche.co/feed.rss" },
   { name: "Cafebiz", icon: "📰", url: "https://cafebiz.vn/rss/home.rss" },
   { name: "Wait But Why", icon: "⏳", url: "https://waitbutwhy.com/feed" },
-  {name: "Reddit", icon: "👾", url: "https://www.reddit.com/r/AskReddit/.rss"},
+  { name: "Reddit", icon: "👾", url: "https://www.reddit.com/r/AskReddit/.rss" },
 ];
 
 const extractFirstImage = (htmlContent) => {
@@ -68,6 +68,13 @@ const TechFeed = () => {
     };
 
     fetchFeeds();
+
+    const interval = setInterval(() => {
+      fetchFeeds();
+      console.log("🔁 Refreshed feeds at", new Date().toLocaleTimeString());
+    }, 10 * 60 * 1000); // 10 minutes
+
+    return () => clearInterval(interval); // cleanup on unmount
   }, []);
 
   const scrollTabs = (dir) => {
