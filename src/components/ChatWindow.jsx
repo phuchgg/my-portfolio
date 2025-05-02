@@ -17,7 +17,7 @@ const parseMessageWithLinks = (text) => {
 
 const conversationFlow = {
   start: {
-    text: "Hello bạn trẻ! Tôi là Hoàng Gia Phúc, master IELTS, chuyên trị bệnh mất gốc và bệnh lười 🤣. Giờ bạn thích gì nè?",
+    text: "Hey bạn! Phúc đây - chuyên gia IELTS sẵn sàng 'chữa bệnh' mất gốc và lười biếng cho bạn 😉. Giờ thì, bạn cần Phúc giúp gì trên con đường chinh phục IELTS nào?",
     options: [
       { label: "Khóa học", next: "courses" },
       { label: "Kinh nghiệm giảng dạy", next: "teachingExperience" },
@@ -37,21 +37,21 @@ const conversationFlow = {
     ]
   },
   basicCourse: {
-    text: "Khóa này dành riêng cho các bạn mà cứ nghe 'tiếng Anh' là như 'đàn gẩy tai trâu' 😝.",
+    text: "Bạn thấy tiếng Anh khó nhằn, nghe giảng mà như 'vịt nghe sấm'? Đây chính là khóa học 'cứu cánh' dành riêng cho bạn 😝.",
     options: []
   },
   advancedCourse: {
-    text: "Lớp này cam kết giúp bạn từ band thường dân thành band 'rich kid' IELTS 8.0+ luôn nha! 😎",
+    text: "Cam kết đồng hành cùng bạn 'lột xác' điểm số, từ band 'phổ thông' vươn tới mục tiêu IELTS 8.0+ đáng mơ ước! 😎",
     options: []
   },
   schedule: {
-    text: "Cập nhật lịch học mới toanh tại https://engonow.com/gioi-thieu/luyen-thi-ielts để 'đu trend' sớm nhất nè!",
+    text: "Lịch học mới keng đã lên sóng! Check ngay tại https://engonow.com/gioi-thieu/luyen-thi-ielts để chọn giờ học ưng ý và 'xí' chỗ sớm nhất nhé!",
     options: []
   },
 
   // 📚 KINH NGHIỆM GIẢNG DẠY
   teachingExperience: {
-    text: "6 năm 'sống chết' cùng IELTS, học viên nào qua tay tui cũng đều 'bay màu' nỗi sợ tiếng Anh hết á 😌.",
+    text: "Hỏi 'thuốc đặc trị' nỗi ám ảnh tiếng Anh ở đâu? Ở đây này! Hơn 6 năm 'pha chế', mình đã 'bào chế' thành công 'liều thuốc' giúp học viên 'yêu lại từ đầu' với IELTS. 'Tác dụng phụ' là điểm cao 'gây sốc' đó nha! 💊❤️📈",
     options: []
   },
 
@@ -64,7 +64,7 @@ const conversationFlow = {
 
   // 🌀 HỎI XOÁY ĐÁP XÀM
   funnyQA: {
-    text: "Bạn hỏi gì tui đáp nấy, độ nhảm thì vô cực nhưng cười không cười ráng chịu à! 😚",
+    text: "Cần 'giải cứu' khúc mắc nào à? 'Triển' liền câu hỏi đi! Mình 'support' hết mình, cách trả lời có thể hơi 'ô dề' tí nhưng đảm bảo 'có tâm' và không bao giờ 'thiếu muối' đâu nha! ✨🧂",
     options: [
       { label: "IELTS có giúp có bồ không?", next: "funny1" },
       { label: "Thi IELTS xong giàu không?", next: "funny2" },
@@ -72,15 +72,15 @@ const conversationFlow = {
     ]
   },
   funny1: {
-    text: "IELTS thì không chắc có bồ, nhưng có điểm IELTS cao thì bồ auto tới nha 😏.",
+    text: "Không dám hứa học IELTS xong là có người yêu, nhưng điểm số ấn tượng chắc chắn là một 'điểm cộng' siêu to khổng lồ trong mắt 'ai đó' nha! 😏",
     options: []
   },
   funny2: {
-    text: "Giàu hay không chưa biết, nhưng giàu kiến thức thì có thiệt đó! 🤑",
+    text: "Người ta 'giàu' vì 'chốt đơn' liên tục, mình 'giàu' vì 'chốt chữ' không ngừng nghỉ! Cái 'gia tài' này mới 'bảo hành trọn đời', không sợ 'deadline' dí tới bến! 😆📖",
     options: []
   },
   funny3: {
-    text: "IELTS không trị mụn nhưng thức khuya ôn IELTS thì mụn auto tới thăm đều nha bạn 😭.",
+    text: "Hỏi 'biểu tượng' của người thức khuya cày IELTS là gì? Không phải sách vở đâu, là MỤN đó! 'Auto' có mụn là biết độ 'try hard' rồi nha! 😩🚩",
     options: []
   },
 
@@ -141,16 +141,46 @@ export default function ChatWindow({ onClose }) {
         setMessages((prev) => [...prev, { sender: 'bot', text: "Đang bói điểm giúp bạn... ✨🔮" }]);
         setTimeout(() => {
           const results = [
-            { band: 4.5, msg: 'Nghe rõ, hiểu chậm, viết sai chính tả liên tục. Nhưng được cái... có cố gắng 😅' },
-            { band: 5.0, msg: 'Ngữ pháp như lúa non, phát âm như tiếng gà gáy... nhưng có tố chất tiềm ẩn 🐣' },
-            { band: 5.5, msg: 'Chiến sĩ học nhóm, gánh team về phần nghe. Cần “buff” thêm từ vựng nha 💪' },
-            { band: 6.0, msg: 'Trả lời đúng đề, có idea rõ ràng, nhưng... vẫn hay bị giám khảo hỏi lại 😬' },
-            { band: 6.5, msg: 'Ổn áp! Dính “and... and... and then” hơi nhiều, nhưng tinh thần rất IELTS 🧠' },
-            { band: 7.0, msg: 'Thần thái band 7, nói rõ ràng, viết logic. Chỉ thiếu 1 chút “collocation thần thánh” ✍️' },
-            { band: 7.5, msg: 'Gần tới đỉnh rồi. Phản xạ tốt, từ vựng khá. Chỉ cần đừng “so” everything là ổn 😂' },
-            { band: 8.0, msg: 'Chúc mừng thần học! Band 8 là chuyện nhỏ với bạn. Nói chuyện như TED Talk 🎤' },
-            { band: 8.5, msg: 'Bạn đang bước vào vùng “band cao thủ” rồi đó. Nên xem lại phát âm của từ “genre” thôi 😎' },
-            { band: 9.0, msg: 'Huyền thoại sống. Giám khảo còn nhờ bạn dạy lại phần Speaking Part 3 😲' }
+            {
+              "band": 4.5,
+              "msg": "Nghe thì real là có nghe thấy âm thanh đó, nhưng não loading chậm hơn wifi nhà hàng xóm 🥲. Viết thì chính tả literally đi chơi xa chưa về. Được cái... tinh thần chiến đấu vẫn 💯! Cố lên bạn ơi!"
+            },
+            {
+              "band": 5.0,
+              "msg": "Ngữ pháp còn \"non và xanh\" lắm, phát âm nghe như \"tiếng lòng\" của gà lạc mẹ 😭. Cơ mà đừng tủi thân! Bạn là \"viên ngọc thô\" đang chờ ngày \"phá kén\" đó nha! Tiềm năng level max! 🐣🚀"
+            },
+            {
+              "band": 5.5,
+              "msg": "Bạn chính là \"bestie\" của phần Listening, cân literally cả team! Giờ chỉ cần \"farm\" thêm mớ từ vựng là thành \"pro player\" cân 3rd section ngon ơ! 💪🎧"
+            },
+            {
+              "band": 6.0,
+              "msg": "Ý tưởng \"bay bổng\" đúng đề, trả lời cũng \"okela\" rồi đó. Chỉ có điều... giám khảo vẫn nhìn bạn với ánh mắt \"hmm... bạn nói gì cơ?\" 😬 Cần \"flex\" sự rõ ràng hơn tí nha!"
+            },
+            {
+              "band": 6.5,
+              "msg": "Welcome to band \"quốc dân\"! Trình độ \"ổn áp\" phết rồi đó. Chỉ hơi \"simp lúa\" mấy từ nối and-and-and then tí thôi 😂. Bù lại tinh thần \"try hard\" vì IELTS thì khỏi bàn! 🧠💯"
+            },
+            {
+              "band": 7.0,
+              "msg": "Thần thái band 7 \"áp đảo\" rồi đó! Nói năng \"flow\" như rap, viết logic như dân IT. Chỉ còn thiếu vài \"gia vị bí mật\" gọi là collocation là \"chuẩn gu\" Tây 100%! Xuất sắc! 🚀"
+            },
+            {
+              "band": 7.5,
+              "msg": "Đã gần chạm \"nóc\" rồi bạn ơi! Phản xạ \"tia chớp\", từ vựng \"xịn sò\" khỏi bàn. Chỉ cần \"bơ đi\" cái thói \"so... so... so...\" là thành \"chúa hề\" Speaking ngay! 😉🎤"
+            },
+            {
+              "band": 8.0,
+              "msg": "Chúc mừng \"thần học\" đã \"auto win\" band 8! Điểm số này \"chuyện nhỏ như con thỏ\" với bạn. Nói chuyện thì cứ gọi là \"TED Talk\" phiên bản \"real\", nghe cuốn muốn xỉu! 😎👌"
+            },
+            {
+              "band": 8.5,
+              "msg": "Đã chính thức bước chân vào \"Vùng an toàn\" của \"cao thủ\"! Band 8.5 \"đỉnh của chóp\" khỏi bàn. Lỗi duy nhất (có thể) chỉ là... phát âm từ \"genre\" thôi đó nha 😂 \"Real\" pro là đây! 👑🤏"
+            },
+            {
+              "band": 9.0,
+              "msg": "Đích thị là \"Huyền thoại sống\" của IELTS! 9.0 trong tầm tay, dễ như \"nhai kẹo kéo\". Nghe đồn giám khảo còn phải \"quỳ lạy\" xin vía học Speaking Part 3 từ bạn đó! 🤯👑 Quá khủng!"
+            }
           ];
           const result = results[Math.floor(Math.random() * results.length)];
 
@@ -211,7 +241,7 @@ export default function ChatWindow({ onClose }) {
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <span>Mắc hỏi</span>
+        <span>Mắc trả lời</span>
         <button onClick={onClose}>×</button>
       </div>
       <div className="chat-body" ref={chatBodyRef}>
