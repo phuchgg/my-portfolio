@@ -48,7 +48,7 @@ const TechFeed = () => {
           rssFeeds.map(async (feed) => {
             try {
               const res = await axios.get(
-                `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&t=${Date.now()}`
+                `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&api_key=uult1yh8ysz60jynpdz2uc97uqkszjh3vsljlvun`
               );
               return {
                 name: feed.name,
@@ -142,9 +142,10 @@ const TechFeed = () => {
           );
         })}
 
-        {feeds[activeFeed]?.items.length === 0 && (
+        {activeFeed?.items?.length === 0 && (
           <p className="feed-empty">Không có bài viết nào.</p>
         )}
+
       </div>
 
       {totalPages > 1 && (
