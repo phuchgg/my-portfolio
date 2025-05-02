@@ -37,7 +37,7 @@ const TechFeed = () => {
   const [feeds, setFeeds] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
   const [page, setPage] = useState(1);
-  const itemsPerPage = 12;
+  const itemsPerPage = 6;
   const activeFeed = feeds[activeTab];
   const feedTabsRef = useRef(null);
 
@@ -53,7 +53,9 @@ const TechFeed = () => {
               return {
                 name: feed.name,
                 icon: feed.icon,
-                items: res.data.items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+                items: res.data.items
+                  .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+                  .slice(0, 18)
               };
             } catch (err) {
               console.warn(`❌ Lỗi khi fetch ${feed.name}:`, err.message);
@@ -83,13 +85,11 @@ const TechFeed = () => {
   };
 
   const paginateItems = (items) => {
-    const total = items.length;
-    const midpoint = 6;
-    if (page === 1) return items.slice(0, midpoint);
-    return items.slice(midpoint, total);
+    const start = (page - 1) * itemsPerPage;
+    return items.slice(start, start + itemsPerPage);
   };
 
-  const totalPages = (activeFeed?.items.length || 0) > 6 ? 2 : 1;
+  const totalPages = Math.ceil((activeFeed?.items.length || 0) / itemsPerPage);
 
 
   return (
