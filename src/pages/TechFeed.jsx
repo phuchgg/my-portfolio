@@ -6,6 +6,8 @@ const getDefaultThumb = (feedName) => {
   switch (feedName) {
     case "VNExpress":
       return "/images/VNExpress-logo.jpg";
+    case "Reddit":
+      return "/images/reddit-logo.png";
     default:
       return "/images/default_thumb.jpg";
   }
@@ -20,7 +22,9 @@ const rssFeeds = [
   { name: "Rock Paper Shotgun", icon: "👾", url: "https://www.rockpapershotgun.com/feed" },
   { name: "Make Use Of", icon: "🧰", url: "https://makeuseof.com/feed" },
   { name: "Psyche", icon: "🧠", url: "https://psyche.co/feed.rss" },
-  { name: "VNExpress", icon: "📰", url: "https://vnexpress.net/rss/tin-moi-nhat.rss" },
+  { name: "Cafebiz", icon: "📰", url: "https://cafebiz.vn/rss/home.rss" },
+  { name: "Wait But Why", icon: "⏳", url: "https://waitbutwhy.com/feed" },
+  {name: "Reddit", icon: "👾", url: "https://www.reddit.com/r/AskReddit/.rss"},
 ];
 
 const extractFirstImage = (htmlContent) => {
@@ -32,6 +36,8 @@ const extractFirstImage = (htmlContent) => {
 const TechFeed = () => {
   const [feeds, setFeeds] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 12;
   const activeFeed = feeds[activeTab];
   const feedTabsRef = useRef(null);
 
@@ -47,9 +53,7 @@ const TechFeed = () => {
               return {
                 name: feed.name,
                 icon: feed.icon,
-                items: res.data.items
-                  .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
-                  .slice(0, 6),
+                items: res.data.items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
               };
             } catch (err) {
               console.warn(`❌ Lỗi khi fetch ${feed.name}:`, err.message);
@@ -71,6 +75,16 @@ const TechFeed = () => {
     feedTabsRef.current.scrollBy({ left: dir * 150, behavior: "smooth" });
   };
 
+  const paginateItems = (items) => {
+    const total = items.length;
+    const midpoint = 6;
+    if (page === 1) return items.slice(0, midpoint);
+    return items.slice(midpoint, total);
+  };
+
+  const totalPages = (activeFeed?.items.length || 0) > 6 ? 2 : 1;
+
+
   return (
     <div className="techfeed-container">
       <div className="feed-tabs-wrapper">
@@ -79,7 +93,10 @@ const TechFeed = () => {
             <button
               key={feed.name}
               className={`feed-tab ${activeTab === idx ? "active" : ""}`}
-              onClick={() => setActiveTab(idx)}
+              onClick={() => {
+                setActiveTab(idx);
+                setPage(1);
+              }}
             >
               {feed.icon} {feed.name}
             </button>
@@ -88,7 +105,7 @@ const TechFeed = () => {
       </div>
 
       <div className="feed-grid">
-        {(feeds[activeTab]?.items || []).map((item, idx) => {
+        {(paginateItems(activeFeed?.items || [])).map((item, idx) => {
           const contentHtml = item.content || item.description;
           const thumb =
             item.thumbnail ||
@@ -122,6 +139,24 @@ const TechFeed = () => {
           <p className="feed-empty">Không có bài viết nào.</p>
         )}
       </div>
+
+      {totalPages > 1 && (
+        <div className="pagination">
+          <button disabled={page === 1} onClick={() => setPage(1)}>{"<<"}</button>
+          <button disabled={page === 1} onClick={() => setPage(page - 1)}>{"<"}</button>
+          {[...Array(totalPages)].map((_, i) => (
+            <button
+              key={i + 1}
+              className={page === i + 1 ? "active" : ""}
+              onClick={() => setPage(i + 1)}
+            >
+              {i + 1}
+            </button>
+          ))}
+          <button disabled={page === totalPages} onClick={() => setPage(page + 1)}>{">"}</button>
+          <button disabled={page === totalPages} onClick={() => setPage(totalPages)}>{">>"}</button>
+        </div>
+      )}
     </div>
   );
 };

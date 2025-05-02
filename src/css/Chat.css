@@ -14,10 +14,9 @@
   z-index: 999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   user-select: none;
-  /* 🔒 không cho bôi xanh */
+  -webkit-user-drag: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
-  /* 💡 iOS/Chrome tap */
   outline: none;
 }
 
@@ -26,8 +25,8 @@
   bottom: 90px;
   right: 20px;
   width: 320px;
-  max-height: 80vh; 
-  min-height: 500px;            /* 📏 Giới hạn chiều cao */          /* 📏 Giới hạn chiều cao */
+  max-height: 500px; 
+  height: 500px; 
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -46,7 +45,6 @@
   font-size: 16px;
   display: flex;
   align-items: center;
-  /* 👈 canh giữa cả dòng chữ + nút */
   justify-content: space-between;
 }
 
@@ -91,7 +89,8 @@
 .chat-footer {
   padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: nowrap;              /* ❌ Không xuống dòng */
+  overflow-x: auto;               /* ✅ Cho cuộn ngang */
   gap: 8px;
   background: white;
   margin-top: auto;
@@ -132,6 +131,8 @@
 }
 
 .option-button {
+  flex: 0 0 auto;                 /* ✅ Không co giãn, giữ nguyên size */
+  min-width: max-content;
   padding: 10px;
   background-color: white;
   border: 1px solid #cce0ff;

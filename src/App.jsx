@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/tin-cong-nghe" element={<TechFeed />} />
+        <Route path="/news" element={<TechFeed />} />
       </Routes>
       <Footer />
       <FloatingChatButton />

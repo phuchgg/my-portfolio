@@ -70,7 +70,7 @@ textarea:focus {
 }
 
 button {
-  background-color: var(--accent-red);
+  background-color: #0070f3;
   color: var(--white);
   padding: 14px;
   border: none;
@@ -82,5 +82,5 @@ button {
 }
 
 button:hover {
-  background-color: #d85a3b;
+  background-color: #1366c5
 }

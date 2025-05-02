@@ -120,6 +120,45 @@ body {
 
   }
 
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5rem;
+    position: relative;
+    bottom: 0;
+    padding-bottom: 0rem;
+    flex-wrap: wrap;
+  }
+  
+  
+  .pagination button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background-color: #999;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .pagination button:hover:not(:disabled) {
+    background-color: #d6d6d6;
+  }
+  
+  .pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  
+  .pagination button.active {
+    background-color: #0070f3;   /* xám đậm */
+    color: white;
+    font-weight: bold;
+
+  }
+  
+
   /* Responsive fix cho tab scroll mobile */
 @media (max-width: 768px) {
     .feed-tabs {
