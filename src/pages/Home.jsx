@@ -17,7 +17,7 @@ function Home() {
             Xin chào, mình là giáo viên IELTS có tâm, mê công nghệ, ghiền tâm lý, thích sáng tạo, giỏi "bốc phét" số liệu thành câu chuyện đời thường. Nhiệm vụ của mình là đưa học trò qua hết "ải IELTS", và thi thoảng đưa bản thân thoát khỏi vòng lặp code bug và tâm lý "overthinking"! 😉<br />
           </p>
           <div className="buttons">
-            <a href="https://www.linkedin.com/in/phuc-hgg/" className="resume">Resume</a>
+            <a href="https://www.linkedin.com/in/phuc-hgg/" className="resume">CV</a>
             <a href="https://github.com/phuchgg" className="projects">Dự án</a>
             <Link to="/contact" className="contact">Liên hệ</Link>
           </div>

@@ -156,8 +156,7 @@ main {
   width: clamp(120px, 14.5vw, 198px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  border: 2px solid #000;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.1em;
   color: #000;
   text-decoration: none;

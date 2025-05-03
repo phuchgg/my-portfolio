@@ -7,7 +7,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLinkClick = () => {
-    setMenuOpen(false); // 👈 Tự đóng menu khi click bất kỳ link nào
+    setMenuOpen(false);
   };
 
   return (
@@ -29,7 +29,7 @@ function Navbar() {
 
       <nav className={`navbar ${menuOpen ? 'active' : ''}`}>
         <Link to="https://github.com/phuchgg" onClick={handleLinkClick}>Dự án</Link>
-        <Link to="https://www.linkedin.com/in/phuc-hgg/" onClick={handleLinkClick}>Resume</Link>
+        <Link to="https://www.linkedin.com/in/phuc-hgg/" onClick={handleLinkClick}>CV</Link>
         <Link to="/contact" onClick={handleLinkClick}>Liên hệ</Link>
         <Link to="/news" onClick={handleLinkClick}>Tin tức</Link>
       </nav>
