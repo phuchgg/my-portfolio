@@ -28,10 +28,10 @@ function Navbar() {
       </div>
 
       <nav className={`navbar ${menuOpen ? 'active' : ''}`}>
-        <Link to="https://www.linkedin.com/in/phuc-hgg/" onClick={handleLinkClick}>Resume</Link>
         <Link to="https://github.com/phuchgg" onClick={handleLinkClick}>Dự án</Link>
-        <Link to="/news" onClick={handleLinkClick}>Tin tức</Link>
+        <Link to="https://www.linkedin.com/in/phuc-hgg/" onClick={handleLinkClick}>Resume</Link>
         <Link to="/contact" onClick={handleLinkClick}>Liên hệ</Link>
+        <Link to="/news" onClick={handleLinkClick}>Tin tức</Link>
       </nav>
     </header>
   );
