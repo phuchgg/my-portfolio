@@ -155,13 +155,13 @@ main {
 }
 
 .buttons a {
-  width: clamp(120px, 14.5vw, 198px);
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  border: 1px solid #000;
+  width: 180px; /* fixed width */
+  height: 55px; /* consistent height */
+  border-radius: 12px;
+
   font-weight: 600;
   font-size: 1.1em;
-  color: #000;
+  color: #ffffff;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -171,15 +171,15 @@ main {
 }
 
 .buttons a.resume {
-  background-color: #f4d35e;
+  background-color: #1d2a75;
 }
 
 .buttons a.projects {
-  background-color: #ee6c4d;
+  background-color: #1d2a75;
 }
 
 .buttons a.contact {
-  background-color: #7bdff2;
+  background-color: #1d2a75;
 }
 
 .buttons a:hover {
@@ -275,8 +275,11 @@ footer a {
   }
 
   .buttons a {
-    width: 160px;
-    height: 160px;
+    width: 50%;
+    height: auto;
+    padding: 14px 0;
+    text-align: center;
+    margin-top: 10px;
   }
 
   footer {
