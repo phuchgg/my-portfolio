@@ -17,47 +17,47 @@ const parseMessageWithLinks = (text) => {
 
 const conversationFlow = {
   start: {
-    text: "Hey bạn! Phúc đây - chuyên gia IELTS sẵn sàng 'chữa bệnh' mất gốc và lười biếng cho bạn 😉. Giờ thì, bạn cần Phúc giúp gì trên con đường chinh phục IELTS nào?",
+    text: "Hey bạn! Phúc đây - sẵn sàng đồng hành cùng bạn 'đánh bay' nỗi lo 'mất gốc' và cả 'lười biếng' nữa! 😄 Giờ thì, bạn cần Phúc hỗ trợ điều gì trên hành trình chinh phục IELTS của mình nào?",
     options: [
-      { label: "Khóa học", next: "courses" },
-      { label: "Kinh nghiệm giảng dạy", next: "teachingExperience" },
-      { label: "Test nhân phẩm", next: "ieltsLuckTest" },
-      { label: "Hỏi xoáy đáp xàm", next: "funnyQA" },
-      { label: "Thầy Phúc trả lời nhanh", next: "quickReply" }
+      { label: "Các khóa học phù hợp với bạn", next: "courses" },
+      { label: "Về Thầy Phúc 😉", next: "teachingExperience" },
+      { label: "Test Nhân Phẩm' IELTS (Vui là chính nha!) 😂", next: "ieltsLuckTest" },
+      { label: "Hỏi Xoáy Đáp Xàm' cùng Phúc 🤪", next: "funnyQA" },
+      { label: "Phúc luôn 'trực chiến' trả lời siêu tốc! ⚡", next: "quickReply" }
     ]
   },
 
   // 🎓 KHÓA HỌC
   courses: {
-    text: "Pick khóa học nào để 'kil' IELTS đây bạn tui?",
+    text: "Tìm khóa học nào để cùng Phúc 'chinh phục' IELTS đây bạn ơi? 🤔",
     options: [
-      { label: "Khóa lấy gốc cấp tốc", next: "basicCourse" },
-      { label: "Khóa luyện thi chuyên sâu", next: "advancedCourse" },
-      { label: "Lịch học & khai giảng", next: "schedule" }
+      { label: "Khóa IELTS 'Xây gốc thần tốc' 💪", next: "basicCourse" },
+      { label: "Khóa IELTS 'Chinh phục Band cao' 🔥", next: "advancedCourse" },
+      { label: "Lịch học 'nóng hổi' & Thông tin khai giảng 👇", next: "schedule" }
     ]
   },
   basicCourse: {
-    text: "Bạn thấy tiếng Anh khó nhằn, nghe giảng mà như 'vịt nghe sấm'? Đây chính là khóa học 'cứu cánh' dành riêng cho bạn 😝.",
+    text: "Bạn đang 'vật lộn' với tiếng Anh, nghe giảng cứ như 'vịt nghe sấm' hả? Đừng lo, đây chính là 'lối thoát' dành riêng cho bạn rồi! ✨",
     options: []
   },
   advancedCourse: {
-    text: "Cam kết đồng hành cùng bạn 'lột xác' điểm số, từ band 'phổ thông' vươn tới mục tiêu IELTS 8.0+ đáng mơ ước! 😎",
+    text: "Cam kết sẽ cùng bạn 'bứt phá' điểm số, từ band 'hiện tại' vươn tới mục tiêu IELTS 8.0+ đáng mơ ước! 💪",
     options: []
   },
   schedule: {
-    text: "Lịch học mới keng đã lên sóng! Check ngay tại https://engonow.com/gioi-thieu/luyen-thi-ielts để chọn giờ học ưng ý và 'xí' chỗ sớm nhất nhé!",
+    text: "Lịch học 'nóng hổi' vừa ra lò! Check ngay tại https://engonow.com/gioi-thieu/luyen-thi-ielts để chọn khung giờ ưng ý và 'giữ chỗ' liền tay bạn nha! 👇",
     options: []
   },
 
   // 📚 KINH NGHIỆM GIẢNG DẠY
   teachingExperience: {
-    text: "Hỏi 'thuốc đặc trị' nỗi ám ảnh tiếng Anh ở đâu? Ở đây này! Hơn 6 năm 'pha chế', mình đã 'bào chế' thành công 'liều thuốc' giúp học viên 'yêu lại từ đầu' với IELTS. 'Tác dụng phụ' là điểm cao 'gây sốc' đó nha! 💊❤️📈",
+    text: "Bạn hỏi 'bí kíp' xóa tan nỗi sợ tiếng Anh ở đâu á? Chính là ở đây nè! Hơn 6 năm 'thai nghén' và 'chăm bẵm', Phúc đã tạo ra 'phương pháp' giúp bạn 'tái ngộ' và 'yêu lại từ đầu' với IELTS. 'Tác dụng phụ' chính là điểm số 'ấn tượng ngoài mong đợi' đó nha! 🤩",
     options: []
   },
 
   // 🎲 TEST NHÂN PHẨM
   ieltsLuckTest: {
-    text: "Đang bói điểm giúp bạn... 🔮✨",
+    text: "Đang 'thần giao cách cảm' với điểm IELTS tương lai của bạn... 🔮✨",
     options: [],
     isFortuneGame: true // dùng flag này để render game mini thay vì hiển thị text như bình thường
   },
@@ -66,43 +66,43 @@ const conversationFlow = {
   funnyQA: {
     text: "Cần 'giải cứu' khúc mắc nào à? 'Triển' liền câu hỏi đi! Mình 'support' hết mình, cách trả lời có thể hơi 'ô dề' tí nhưng đảm bảo 'có tâm' và không bao giờ 'thiếu muối' đâu nha! ✨🧂",
     options: [
-      { label: "IELTS có giúp có bồ không?", next: "funny1" },
-      { label: "Thi IELTS xong giàu không?", next: "funny2" },
-      { label: "IELTS giúp hết mụn không?", next: "funny3" }
+      { label: "Học IELTS có 'auto' có bồ?", next: "funny1" },
+      { label: "Thi xong IELTS có 'đổi đời' không? 💰", next: "funny2" },
+      { label: "IELTS có phải là 'thuốc đặc trị mụn' không? 🤔", next: "funny3" }
     ]
   },
   funny1: {
-    text: "Không dám hứa học IELTS xong là có người yêu, nhưng điểm số ấn tượng chắc chắn là một 'điểm cộng' siêu to khổng lồ trong mắt 'ai đó' nha! 😏",
+    text: "Không dám chắc học xong IELTS là có ngay người yêu, nhưng điểm số ấn tượng chắc chắn sẽ giúp bạn 'ghi điểm' mạnh mẽ hơn trong mắt một ai đó đặc biệt đấy! ✨",
     options: []
   },
   funny2: {
-    text: "Người ta 'giàu' vì 'chốt đơn' liên tục, mình 'giàu' vì 'chốt chữ' không ngừng nghỉ! Cái 'gia tài' này mới 'bảo hành trọn đời', không sợ 'deadline' dí tới bến! 😆📖",
+    text: "Người khác 'giàu' nhờ 'chốt đơn', chúng mình 'giàu' lên từ việc 'chốt' mỗi bài học! Vốn kiến thức này mới là 'gia tài' đáng giá, được 'bảo hành trọn đời' và không lo bị áp lực deadline làm mai một đi đâu nè! 😊",
     options: []
   },
   funny3: {
-    text: "Hỏi 'biểu tượng' của người thức khuya cày IELTS là gì? Không phải sách vở đâu, là MỤN đó! 'Auto' có mụn là biết độ 'try hard' rồi nha! 😩🚩",
+    text: "Muốn biết ai là 'cao thủ' cày IELTS thức khuya không? Đừng nhìn sách vở, nhìn vào... mụn trên mặt ấy! Đó là 'huy chương' danh dự cho sự nỗ lực không ngừng nghỉ đó nha! 😉",
     options: []
   },
 
   // ⚡ THẦY PHÚC TRẢ LỜI NHANH
   quickReply: {
-    text: "Thầy Phúc sẵn sàng giải đáp nhanh hơn cả tốc độ bạn bị crush từ chối nha 🤣",
+    text: "Thầy Phúc giải đáp nhanh lắm nha, nhanh hơn cả tốc độ bạn nhận tin nhắn 'seen' từ crush nữa đó! 😉",
     options: [
-      { label: "Mất gốc học được không thầy?", next: "quick1" },
-      { label: "Học bao lâu mới thi được?", next: "quick2" },
-      { label: "Cách nhớ từ vựng siêu tốc?", next: "quick3" }
+      { label: "Học lại từ con số 0?", next: "quick1" },
+      { label: "Lộ trình và thời gian học?", next: "quick2" },
+      { label: "Phương pháp học từ vựng hiệu quả", next: "quick3" }
     ]
   },
   quick1: {
-    text: "Mất gốc càng phải học lẹ, chứ để lâu là gốc cũng mất luôn á bạn 🤧.",
+    text: "Đã 'mất gốc' thì phải học 'cấp tốc' lên nha bạn ơi, chứ để lâu là 'gốc' cũng... 'biến mất' thật luôn đó! 😟",
     options: []
   },
   quick2: {
-    text: "Nhanh chậm do bạn, nhưng nhanh nhất là học hôm nay, thi ngày mai đó (nói chơi thôi đừng tin) 😆.",
+    text: "Tiến độ học nhanh hay chậm là do bạn quyết định nè. Còn bí quyết nhanh nhất á? Chắc là... học hôm nay, thi ngày mai (Haha, đùa thôi nha! 😁)",
     options: []
   },
   quick3: {
-    text: "Muốn nhớ nhanh phải học vui. Không vui thì ép vui, tại vì ép dầu ép mỡ ai nỡ ép IELTS ha 😅.",
+    text: "Muốn nhớ nhanh thì học phải vui nha. Nếu chưa vui thì 'ép' nó vui lên đi, tại vì ép dầu ép mỡ... ai nỡ ép điểm IELTS xuống hả? 😉.",
     options: []
   }
 };
