@@ -276,7 +276,7 @@ footer a {
 
   .buttons a {
     width: 50%;
-    height: auto;
+    height: 60px;
     padding: 14px 0;
     text-align: center;
     margin-top: 10px;
@@ -382,7 +382,7 @@ body.news-page {
   display: flex;
   justify-content: center;
   gap: 120px;
-  margin: 80px 0 150px;
+  margin: 80px 0 100px;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -408,7 +408,6 @@ body.news-page {
     flex-direction: column;
     gap: 2px;
     align-items: center;
-    padding: 0px 50px;
   }
 
   .counter {
@@ -438,6 +437,7 @@ body.news-page {
     flex-direction: column;
     align-items: center;
     max-width: 100%;
+    gap: 40px;
   }
 
   .stats-section {
