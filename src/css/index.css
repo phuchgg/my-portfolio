@@ -120,8 +120,8 @@ main {
 
 
 .intro {
-  margin-top: 100px;
-  max-width: 440px;
+  margin-top: 110px;
+  max-width: 460px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -155,10 +155,9 @@ main {
 }
 
 .buttons a {
-  width: 180px; /* fixed width */
-  height: 55px; /* consistent height */
+  width: 200px; /* fixed width */
+  height: 60px; /* consistent height */
   border-radius: 12px;
-
   font-weight: 600;
   font-size: 1.1em;
   color: #ffffff;
