@@ -7,6 +7,7 @@ import FloatingChatButton from './components/FloatingChatButton';
 import TechFeed from "./pages/TechFeed";
 
 function App() {
+
   return (
     <>
       <Navbar />
@@ -15,9 +16,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/news" element={<TechFeed />} />
       </Routes>
-      <Footer />
+      <Footer/>
       <FloatingChatButton />
-
     </>
   );
 }

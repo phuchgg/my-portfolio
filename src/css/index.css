@@ -10,6 +10,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--bg-light);
   color: var(--text-dark);
+  background-image: linear-gradient(to bottom right, #e7f3ff, #ffffff);
 }
 
 :root {
@@ -93,7 +94,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 60px 20px 60px;
-  background-color: #f4f4f4;
+  background: transparent;
 }
 
 .hero {
@@ -196,8 +197,14 @@ footer {
   font-size: 0.95em;
   color: #444;
   font-family: 'Segoe UI', sans-serif;
+  background: transparent;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.news-page .footer {
+  background-color: #ffffff;
+  color: #000;
+}
 
 footer div {
   margin: 10px 20px;
