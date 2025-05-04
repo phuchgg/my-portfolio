@@ -23,7 +23,6 @@ const rssFeeds = [
   { name: "Make Use Of", icon: "🧰", url: "https://makeuseof.com/feed" },
   { name: "Psyche", icon: "🧠", url: "https://psyche.co/feed.rss" },
   { name: "Cafebiz", icon: "📰", url: "https://cafebiz.vn/rss/home.rss" },
-  { name: "Wait But Why", icon: "⏳", url: "https://waitbutwhy.com/feed" },
   { name: "Reddit", icon: "👾", url: "https://www.reddit.com/r/AskReddit/.rss" },
 ];
 
