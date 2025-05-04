@@ -1,4 +1,3 @@
-import { i } from "framer-motion/client";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -47,7 +46,7 @@ const StatBox = ({ target, label }) => {
 
 const StatsCounter = () => {
     const { pathname } = useLocation();
-    if (pathname === "/contact" || "/news") return null;
+    if (pathname === "/contact" && "/news") return null;
     return (
         <section className="stats-section">
             <StatBox target={7} label="Năm đồng hành cùng học viên" />
