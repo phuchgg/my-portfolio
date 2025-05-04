@@ -9,7 +9,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--bg-light);
   color: var(--text-dark);
-  background-image: linear-gradient(to bottom right, #e7f3ff, #ffffff);
+  background-image: linear-gradient(to bottom right, #f0f4ff, #ffffff);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
