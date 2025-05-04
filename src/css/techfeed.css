@@ -9,9 +9,10 @@ body {
     max-width: 1300px;
     margin: auto;
     padding: 3rem 1rem;
-    background-color: #f4f4f4;
+    background-color: linear-gradient(to bottom right, #f0f4ff, #ffffff);
     color: #111;
     padding-bottom: 4rem;
+
   }
   
   .techfeed-title {
@@ -39,18 +40,19 @@ body {
     cursor: pointer;
     padding: 0.5rem 0;
     border-bottom: 3px solid transparent;
-    color: #666;
+    color: #000000;
     transition: all 0.3s ease;
+    
   }
   
   .feed-tab:hover {
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: transparent;
+    color: #1d2a75;
   }
   
   .feed-tab.active {
-    color: #0070f3;
-    border-bottom-color: #0070f3;
+    color: #1d2a75;
+    border-bottom-color: #1d2a75;
     background-color: white; /* Change from red/blue */
     padding: 0.5rem 1rem;
   }
@@ -136,7 +138,7 @@ body {
   .pagination button {
     padding: 6px 12px;
     border: 1px solid #ccc;
-    background-color: #999;
+    background-color: #1d2a75;
     cursor: pointer;
     border-radius: 6px;
     transition: background-color 0.2s ease;
@@ -152,7 +154,7 @@ body {
   }
   
   .pagination button.active {
-    background-color: #0070f3;   /* xám đậm */
+    background-color: #1d2a75;
     color: white;
     font-weight: bold;
 

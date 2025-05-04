@@ -71,7 +71,7 @@ header {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background-color: #0070f3;
+  background-color: #00C800;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -202,10 +202,6 @@ footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.news-footer {
-  background-color: #ffffff;
-  color: #000; 
-}
 
 footer div {
   margin: 10px 20px;
@@ -341,11 +337,6 @@ footer a {
 
 .social-title {
   margin-left: 10px;
-}
-
-body.news-page {
-  background: #f2f2f2 !important;
-  background-image: none !important;
 }
 
 @keyframes fadeSlideUp {

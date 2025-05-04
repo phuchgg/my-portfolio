@@ -47,7 +47,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #e0e0e0;
-  margin-left: 5px;
+
 }
 
 .chat-header button {
@@ -167,3 +167,27 @@
 .msg-row.bot {
   justify-content: flex-start;
 }
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 28px;
+  height: 24px;
+}
+
+.online-dot {
+  position: absolute;
+  bottom: -2px;
+  right: -4px;
+  width: 9px;
+  height: 9px;
+  background-color: #00C800; /* Messenger green */
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+

@@ -1,9 +1,7 @@
-import { useLocation } from 'react-router-dom';
+
 function Footer() {
-  const location = useLocation();
-  const isNewsPage = location.pathname === '/news';
     return (
-      <footer className={`footer ${isNewsPage ? 'news-footer' : ''}`}>
+      <footer >
         <div>
           <strong className="social-title">SĐT</strong><br />
           <a href="tel:0704428062">070-4428-062</a>

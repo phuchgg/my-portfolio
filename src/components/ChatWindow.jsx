@@ -241,9 +241,15 @@ export default function ChatWindow({ onClose }) {
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <span>Mắc trả lời</span>
-        <button onClick={onClose}>×</button>
-      </div>
+  <div className="admin-info">
+    <div className="avatar-wrapper">
+      <img src="/images/bot-icon.png" alt="Admin Avatar" className="avatar" />
+      <span className="online-dot"></span>
+    </div>
+    <span>Mắc trả lời</span>
+  </div>
+  <button onClick={onClose}>×</button>
+</div>
       <div className="chat-body" ref={chatBodyRef}>
         {messages.map((msg, i) => (
           <div key={i} className={`msg-row ${msg.sender}`}>
