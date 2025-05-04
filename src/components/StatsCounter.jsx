@@ -47,7 +47,7 @@ const StatBox = ({ target, label }) => {
 
 const StatsCounter = () => {
     const { pathname } = useLocation();
-    if (pathname === "/contact") return null;
+    if (pathname === "/contact" || "/news") return null;
     return (
         <section className="stats-section">
             <StatBox target={7} label="Năm đồng hành cùng học viên" />
