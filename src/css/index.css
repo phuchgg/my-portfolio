@@ -105,7 +105,7 @@ main {
   justify-content: center;
   align-items: center;
   max-width: 1000px;
-  gap: 40px;
+  gap: 60px;
 }
 
 .hero img {
@@ -376,4 +376,76 @@ body.news-page {
   animation: fadeSlideUp 0.8s ease forwards;
   animation-delay: 0.7s;
   opacity: 0;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  margin: 60px 0 100px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.stat-box {
+  color: #1d2a75;
+}
+
+.counter {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.stat-box p {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: #1d2a75;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .counter {
+    font-size: 2.8rem;
+  }
+
+  .stat-box p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .hero img {
+
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0;
+    transform: none;
+  }
+
+  .intro {
+    max-width: 70%;
+  }
+
+  .buttons {
+    margin-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .stats-section {
+    align-items: center;
+    margin: 60px 0 100px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0 20px;
+    gap: 20px;
+  }
 }
