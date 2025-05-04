@@ -201,9 +201,9 @@ footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.news-page .footer {
+.news-footer {
   background-color: #ffffff;
-  color: #000;
+  color: #000; 
 }
 
 footer div {
@@ -334,6 +334,11 @@ footer a {
 
 .social-title {
   margin-left: 10px;
+}
+
+body.news-page {
+  background: #f2f2f2 !important;
+  background-image: none !important;
 }
 
 @keyframes fadeSlideUp {
