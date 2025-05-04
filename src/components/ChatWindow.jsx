@@ -64,7 +64,7 @@ const conversationFlow = {
 
   // 🌀 HỎI XOÁY ĐÁP XÀM
   funnyQA: {
-    text: "Cần 'giải cứu' khúc mắc nào à? 'Triển' liền câu hỏi đi! Mình 'support' hết mình, cách trả lời có thể hơi 'ô dề' tí nhưng đảm bảo 'có tâm' và không bao giờ 'thiếu muối' đâu nha! ✨🧂",
+    text: "Bạn đang 'bí' chỗ nào cần gỡ rối không nè? 😉 Cứ 'bắn' câu hỏi qua đây, Phúc sẵn sàng 'support' hết mình! Trả lời đôi khi hơi 'e hèm' tí, nhưng 'có tâm' và 'chất lượng' luôn nha! ✨",
     options: [
       { label: "Học IELTS có 'auto' có bồ?", next: "funny1" },
       { label: "Thi xong IELTS có 'đổi đời' không? 💰", next: "funny2" },
