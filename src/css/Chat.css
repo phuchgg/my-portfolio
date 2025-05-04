@@ -67,14 +67,11 @@
   padding: 0;
 }
 
-
-
-
 .chat-body {
   flex-grow: 1;
   padding: 10px;
   overflow-y: auto;
-  max-height: 380px;
+  max-height: 394px;
   font-size: 14px;
   background: white;
   display: flex;
@@ -169,10 +166,4 @@
 
 .msg-row.bot {
   justify-content: flex-start;
-}
-
-@media (max-width: 768px) {
-  .chat-footer {
-    padding-bottom: 10px;
-  }
 }
