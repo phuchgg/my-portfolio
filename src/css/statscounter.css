@@ -1,0 +1,93 @@
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+    margin: 80px 0 160px;
+    padding-top: 80px;
+    text-align: center;
+    font-family: Be Vietnam Pro, sans-serif;
+    background-color: rgb(255, 255, 255);
+    position: relative; /* 👈 Thêm cái này */
+  }
+
+  .stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust as needed */
+    background: url('/images/wave1.svg') no-repeat center top;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0.1; /* Adjust opacity as needed */
+  }
+  
+  .stat-box {
+    color: #1d2a75;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .counter {
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+  
+  .stat-box p {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    color: #1d2a75;
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 1024px) and (min-width: 768px) {
+
+    .stats-section {
+      align-items: center;
+      margin: 60px 0 100px;
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 0 20px;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .stats-section {
+      flex-direction: column;
+      gap: 2px;
+      align-items: center;
+      margin: 80px 0 100px;
+      padding: clamp(1rem, 5vw, 3rem);
+    }
+  
+    .counter {
+      font-size: 2.8rem;
+    }
+  
+    .stat-box p {
+      font-size: 1rem;
+    }
+  }
+
+.bg-top-wave,
+.bg-bottom-blob {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+}
+
+.bg-top-wave {
+  top: 0;
+  left: 0;
+}
+
+.bg-bottom-blob {
+  bottom: -50px;
+  right: 0;
+  width: 300px;
+}
+  

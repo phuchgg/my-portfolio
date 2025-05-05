@@ -86,7 +86,7 @@ nav a {
   margin-left: 25px;
   color: var(--text-dark);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 main {
@@ -116,7 +116,7 @@ main {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   transform: translateY(-4%);
   border: 6px solid #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -377,6 +377,11 @@ footer a {
   margin: 80px 0 160px;
   text-align: center;
   font-family: Be Vietnam Pro, sans-serif;
+  background-color: white;
+  padding-top: 80px;
+  background-image: url('/images/animatedshape.svg');
+  background-size: cover;
+  background-position: center;
 }
 
 .stat-box {
@@ -401,7 +406,6 @@ footer a {
     gap: 2px;
     align-items: center;
     margin: 80px 0 100px;
-    padding: clamp(1rem, 5vw, 3rem);
   }
 
   .counter {
