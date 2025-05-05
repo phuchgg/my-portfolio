@@ -6,9 +6,9 @@
 
 html,
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Be Vietnam Pro, sans-serif;
   background-color: var(--bg-light);
-  color: var(--text-dark);
+  color: #111;
   background-image: linear-gradient(to bottom right, #f0f4ff, #ffffff);
   min-height: 100vh;
   display: flex;
@@ -70,7 +70,7 @@ header {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background-color: #00C800;
+  background-color: #fb923c;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -94,7 +94,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 20px 60px;
+  padding: 90px 20px 90px;
   background: transparent;
 }
 
@@ -103,7 +103,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1200px;
   gap: 60px;
 }
 
@@ -131,7 +131,8 @@ main {
 
 .intro p {
   margin-top: 8px;
-  line-height: 1.4;
+  line-height: 1.6;
+  font-size: 1.2em;
 }
 
 .intro h1 {
@@ -139,17 +140,18 @@ main {
   margin-bottom: 30px;
   font-weight: 700;
   color: #1d2a75;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .intro h3 {
   margin-bottom: 8px;
   font-weight: 600px;
   color: #1d2a75;
+  font-size: 1.6em;
 }
 
 .buttons {
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 100px;
   display: flex;
   gap: 18px;
@@ -195,8 +197,8 @@ footer {
   justify-content: space-between;
   align-items: flex-start;
   font-size: 0.95em;
-  color: #444;
-  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+  font-family: Be Vietnam Pro, sans-serif;
   background: transparent;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -223,7 +225,7 @@ footer a {
 .menu-toggle span {
   width: 25px;
   height: 3px;
-  background-color: #333;
+  background-color: #111;
   margin: 4px 0;
   transition: 0.4s;
 }
@@ -374,7 +376,7 @@ footer a {
   gap: 180px;
   margin: 80px 0 160px;
   text-align: center;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Be Vietnam Pro, sans-serif;
 }
 
 .stat-box {
@@ -399,6 +401,7 @@ footer a {
     gap: 2px;
     align-items: center;
     margin: 80px 0 100px;
+    padding: clamp(1rem, 5vw, 3rem);
   }
 
   .counter {

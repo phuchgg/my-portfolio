@@ -6,13 +6,12 @@ body {
   }
   
   .techfeed-container {
-    max-width: 1300px;
-    margin: auto;
+    max-width: 1440px;
+    margin-inline: auto;
     padding: 3rem 1rem;
     background-color: linear-gradient(to bottom right, #f0f4ff, #ffffff);
     color: #111;
     padding-bottom: 4rem;
-
   }
   
   .techfeed-title {
@@ -29,7 +28,10 @@ body {
     gap: 1rem;
     margin-bottom: 2rem;
     border-bottom: 2px solid #ddd;
-    padding-bottom: 0.5rem;
+    overflow-x: auto;         /* cho phép kéo ngang, ẩn dư thừa */
+  scroll-snap-type: x mandatory; /* ép card khớp rãnh */
+  -webkit-overflow-scrolling: touch; /* mượt trên iOS */
+  padding: 1rem 0 1rem;     /* đỡ dính sát cạnh */
   }
   
   .feed-tab {
@@ -73,6 +75,8 @@ body {
     transition: all 0.3s ease;
     background: #fff;
     min-height: 400px; /* hoặc chiều cao bạn muốn */
+    flex: 0 0 80%;
+    scroll-snap-align: start;
   }
   
   .feed-card:hover {
@@ -191,5 +195,9 @@ body {
   
     .feed-card {
       min-height: 380px;
+    }
+
+    .pagination{
+      display: none !important;
     }
   }
