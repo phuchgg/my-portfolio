@@ -131,7 +131,7 @@ main {
 
 .intro p {
   margin-top: 8px;
-  line-height: 1.6;
+  line-height: 1.8;
   font-size: 1.2em;
 }
 
@@ -140,7 +140,7 @@ main {
   margin-bottom: 30px;
   font-weight: 700;
   color: #1d2a75;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .intro h3 {
