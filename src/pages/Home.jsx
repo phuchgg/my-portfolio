@@ -11,10 +11,10 @@ function Home() {
             pointerEvents: "auto"  // giữ khả năng click nếu cần
           }} />
         <div className="intro">
-          <h1>Xin chào</h1>
-          <h3>Vài dòng không deep nhưng real</h3>
+          <h1>Chào bạn, mình là Phúc</h1>
+          <h3>Đây là vài dòng giới thiệu chân thật và gần gũi về mình.</h3>
           <p>
-            Xin chào, mình là giáo viên IELTS có tâm, mê công nghệ, ghiền tâm lý, thích sáng tạo, giỏi "bốc phét" số liệu thành câu chuyện đời thường. Nhiệm vụ của mình là đưa học trò qua hết "ải IELTS", và thi thoảng đưa bản thân thoát khỏi vòng lặp code bug và tâm lý "overthinking"! 😉<br />
+          Mình là một giáo viên IELTS tận tâm, với niềm đam mê lớn dành cho công nghệ, tâm lý học và sự sáng tạo không ngừng. Mình tin mình có khả năng "phiên dịch" những con số hay kiến thức phức tạp nhất thành ngôn ngữ gần gũi, ai đọc cũng thấy 'gật gù'. Mục tiêu chính? Đưa học viên 'cán đích' IELTS thành công! À, và song song đó là 'đấu tranh' với mấy em code bug và tìm cách 'thoát ly' những lúc lỡ "overthinking"! 😉<br />
           </p>
           <div className="buttons">
             <a href="https://www.linkedin.com/in/phuc-hgg/" className="resume">CV</a>

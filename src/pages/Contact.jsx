@@ -20,13 +20,13 @@ function Contact() {
     <main>
       <section className="contact-wrapper">
         <div className="contact-box">
-          <h1>Inbox tui đi chờ chi!</h1>
+          <h1>Liên hệ</h1>
           <p className="description">Cam kết không seen rồi để đó.</p>
           <form ref={form} onSubmit={sendEmail}>
-            <input type="text" name="user_name" placeholder="Tên của ní" required />
-            <input type="email" name="user_email" placeholder="Email ne" required />
-            <textarea name="message" placeholder="E hèm hỏi giề" rows="5" required></textarea>
-            <button type="submit">Quăng nhẹ cái tin</button>
+            <input type="text" name="user_name" placeholder="Tên" required />
+            <input type="email" name="user_email" placeholder="Email" required />
+            <textarea name="message" placeholder="Nội dung liên hệ" rows="5" required></textarea>
+            <button type="submit">Gửi</button>
           </form>
         </div>
       </section>
