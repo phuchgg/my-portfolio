@@ -147,7 +147,8 @@ main {
   margin-bottom: 8px;
   font-weight: 600px;
   color: #1d2a75;
-  font-size: 1.6em;
+  font-size: 1.4em;
+  line-height: 1.6;
 }
 
 .buttons {
@@ -417,7 +418,7 @@ footer a {
   }
 
   .intro p {
-    padding-top: 18px;
+    padding-top: 6px;
     line-height: 2; 
   }
   
