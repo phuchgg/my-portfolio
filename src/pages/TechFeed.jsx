@@ -36,7 +36,7 @@ const TechFeed = () => {
   const [feeds, setFeeds] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
   const [page, setPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 8;
   const activeFeed = feeds[activeTab];
   const feedTabsRef = useRef(null);
 
