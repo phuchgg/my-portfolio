@@ -414,11 +414,11 @@ footer a {
 
   .intro p {
     padding-top: 18px;
-    line-height: 2;
+    line-height: 2; 
   }
   
   .intro h1 {
-    line-height: 1.8;
+    line-height: 1.4;
   }
 
 }
