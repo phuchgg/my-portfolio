@@ -411,6 +411,16 @@ footer a {
   .stat-box p {
     font-size: 1rem;
   }
+
+  .intro p {
+    padding-top: 18px;
+    line-height: 2;
+  }
+  
+  .intro h1 {
+    line-height: 1.8;
+  }
+
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
