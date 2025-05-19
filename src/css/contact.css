@@ -241,17 +241,43 @@
 
 /* === Responsive === */
 @media (max-width: 768px) {
+  .contact-modern {
+    padding: 40px 20px;
+  }
+
   .contact-columns {
     flex-direction: column;
     gap: 40px;
-  }
-  .contact-modern {
-    padding: 0 20px; /* hoặc 20px 20px nếu cần giữ top/bottom nhẹ nhàng */
+    align-items: center; /* Giữa form */
   }
 
-  .contact-form,
+  .contact-form {
+    width: 100%;
+    max-width: 430px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 80%;
+  }
+
+  .contact-form button {
+    display: block;
+  }
+
   .contact-details {
     width: 100%;
+    max-width: 430px;
+    margin-left: 0;       /* ✅ Trả về như desktop */
+    margin-right: auto;   /* ✅ Lệch trái tự nhiên */
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .contact-details p {
+    justify-content: flex-start; /* ✅ icon + text lệch trái */
   }
 
   .footer-modern {
@@ -263,13 +289,40 @@
   .footer-social {
     justify-content: center;
   }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .contact-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 500px;
+    margin-left: 0;
+
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+  }
+
+  .contact-form button {
+
+    display: block;
+  }
 
   .contact-details {
-  margin-left: 0px;
-  margin-top: 10%;
+    width: 100%;
+    max-width: 500px;
+    margin-left: 0;
+    text-align: left;
+    align-items: flex-start;
+  }
 
-}.contact-form input,
-.contact-form textarea {
-  width: 80%
-}
+  .contact-details p {
+    justify-content: flex-start;
+  }
 }
