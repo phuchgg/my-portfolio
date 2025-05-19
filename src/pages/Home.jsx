@@ -1,29 +1,93 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import "../css/index.css";
 
 function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <main>
-      <section className="hero">
-        <img src="/images/Max.jpg" alt="Max Hoang" draggable="false"
-          onContextMenu={(e) => e.preventDefault()} // ⛔ chặn chuột phải
-          style={{
-            userSelect: "none",    // không cho bôi đen
-            pointerEvents: "auto"  // giữ khả năng click nếu cần
-          }} />
-        <div className="intro">
-          <h1>Chào bạn, mình là Phúc</h1>
-          <h3>Đây là vài dòng giới thiệu chân thật và gần gũi về mình.</h3>
-          <p>
-          Mình là một giáo viên IELTS tận tâm, với niềm đam mê lớn dành cho công nghệ, tâm lý học và sự sáng tạo không ngừng. Mình tin mình có khả năng "phiên dịch" những con số hay kiến thức phức tạp nhất thành ngôn ngữ gần gũi, ai đọc cũng thấy 'gật gù'. Mục tiêu chính? Đưa học viên 'cán đích' IELTS thành công! À, và song song đó là 'đấu tranh' với mấy em code bug và tìm cách 'thoát ly' những lúc lỡ "overthinking"! 😉<br />
-          </p>
-          <div className="buttons">
-            <a href="https://www.linkedin.com/in/phuc-hgg/" className="resume">CV</a>
-            <a href="https://github.com/phuchgg" className="projects">Dự án</a>
-            <Link to="/contact" className="contact">Liên hệ</Link>
+    <div className="container">
+      {/* === Navbar === */}
+      <header className="navbar">
+        <div className="section-container navbar-inner full-width">
+          <div className="logo">Teacher Max</div>
+          <div
+            className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <a
+  href="https://github.com/phuchgg"
+  target="_blank"
+  rel="noreferrer"
+  onClick={() => setIsMenuOpen(false)}
+>
+  Projects
+</a>
+
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
-      </section>
-    </main>
+      </header>
+
+      {/* === Hero Section === */}
+      <main className="hero-wrapper">
+        <section className="hero-new section-container">
+          <div className="hero-left">
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Hi, I'm Max
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              A passionate teacher creating elegant solutions to complex teaching problems.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6, duration: 0.4 }}
+            >
+              <Link to="/contact" className="btn-primary">
+                Get in touch
+              </Link>
+            </motion.div>
+          </div>
+
+          <div className="hero-right">
+            <img src="/images/Max.jpg" alt="Max" />
+          </div>
+        </section>
+      </main>
+
+      {/* === Footer === */}
+      <footer className="footer-wrapper">
+        <div className="footer-modern section-container">
+          <div className="footer-left">
+            <span>© 2025 Max. All rights reserved.</span>
+          </div>
+          <div className="footer-social">
+            <a href="https://www.linkedin.com/in/phuc-hgg/">LinkedIn</a>
+            <a href="https://github.com/?ref=github.co">GitHub</a>
+            <a href="https://zalo.me/0704428062">Zalo</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
 

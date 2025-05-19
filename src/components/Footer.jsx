@@ -1,26 +1,22 @@
-
 function Footer() {
-    return (
-      <footer >
-        <div>
-          <strong className="social-title">SĐT</strong><br />
-          <a href="tel:0704428062">070-4428-062</a>
-        </div>
-        <div>
-          <strong className="social-title">Email</strong><br />
-          <a href="mailto:maximumz160@gmail.com">maximumz160@gmail.com</a>
-        </div>
-        <div>
-          <strong className="social-title">Follow mình</strong><br />
-          <a href="https://zalo.me/0704428062"><img src="/images/zalo.png" alt="Zalo" /></a>
-          <a href="https://www.facebook.com/maximumz160/"><img src="/images/facebook.png" alt="Facebook" /></a>
-        </div>
-        <div>
-          &copy; {new Date().getFullYear()} Max Hoang. Powered with love.
-        </div>
-      </footer>
-    );
-  }
-  
-  export default Footer;
-  
+  return (
+    <footer className="footer-modern">
+      <div className="footer-copy">
+        &copy; {new Date().getFullYear()} Max. All rights reserved.
+      </div>
+      <div className="footer-social">
+        <a href="https://www.linkedin.com/in/phuc-hgg/" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a href="https://github.com/phuchgg" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+          Twitter
+        </a>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;

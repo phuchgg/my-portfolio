@@ -1,72 +1,274 @@
-/* contact.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* === Header (reused layout) === */
+.navbar {
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #706DBE;
+}
+
+/* === Contact Section === */
+.contact-modern {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.contact-title {
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1e1e1e;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin: 0 auto 60px auto;
+  max-width: 600px;
+}
+
+/* === Grid Layout === */
+.contact-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  column-gap: 80px;
+  flex-wrap: wrap;
+  max-width: 800px; /* ✅ Giới hạn chiều rộng */
+  margin: 0 auto;   /* ✅ Căn giữa */
+}
+
+/* === Contact Form === */
+.contact-form {
+  flex: 1;
+  min-width: 388px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1e1e1e;
+}
+
+.contact-form label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  resize: none;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  height: 260px;
+}
+
+.contact-form button {
+  width: 156px;
+  height: 48px;
+  background-color: #706DBE;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #5f58a7;
+  transform: translateY(-2px);
+}
+
+/* === Contact Details === */
+.contact-details {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  margin-left: 52px;
+}
+
+.contact-details h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1e1e1e;
+}
+
+.contact-details p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1px;
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.contact-details p svg {
+  stroke: #706DBE;
+  fill: none;
+  stroke-width: 1.4;
+}
+
+.contact-details p svg path:first-child {
+  display: none;
+}
+
+.contact-details a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.contact-details a:hover {
+  color: #706DBE;
+}
 
 .contact-wrapper {
-  flex: 1;
+  text-align: left;
+  max-width: 1080px;
+  margin-left: 0;
+}
+
+/* === Footer === */
+.footer-wrapper {
+  background-color: white;
+  border-top: 1px solid #eee;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  background-color: #f4f4f4;
   width: 100%;
-  max-width: 600px;
-  margin: 60px auto;
 }
 
-.contact-box {
-  max-width: 650px;
-  width: 100%;
-  background-color: #ffffff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-p.description {
-  color: var(--gray);
-  margin-bottom: 30px;
-  font-size: 1em;
-}
-
-form {
+.footer-modern {
+  font-size: 0.95rem;
+  color: #666;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 40px 40px;
+  max-width: 1280px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-copy {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.footer-social {
+  display: flex;
   gap: 20px;
 }
 
-input,
-textarea {
-  padding: 12px 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1em;
-  transition: border-color 0.3s;
-  resize: none;
+.footer-social a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-input:focus,
-textarea:focus {
-  border-color: var(--accent-red);
-  outline: none;
+.footer-social a:hover {
+  color: #706DBE;
 }
 
-button {
-  background-color: #1d2a75;
-  color: var(--white);
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+/* === Responsive === */
+@media (max-width: 768px) {
+  .contact-columns {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .contact-modern {
+    padding: 0 20px; /* hoặc 20px 20px nếu cần giữ top/bottom nhẹ nhàng */
+  }
 
-button:hover {
-  background-color: #283a9c;
+  .contact-form,
+  .contact-details {
+    width: 100%;
+  }
+
+  .footer-modern {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .contact-details {
+  margin-left: 0px;
+  margin-top: 10%;
+
+}.contact-form input,
+.contact-form textarea {
+  width: 80%
+}
 }

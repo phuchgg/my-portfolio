@@ -1,0 +1,199 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.nav-links a {
+  margin-left: 24px;
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #706DBE;
+}
+
+/* === Section Layout === */
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 60px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Philosophy Cards === */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: stretch;
+}
+
+.philosophy-card {
+  background-color: #fff;
+  border: 1px solid #e4e4e4; 
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.2s ease;
+  box-shadow: none;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-6px);
+}
+
+.philosophy-card .icon {
+ width: 32px;
+  height: 25px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #706DBE;
+  flex-shrink: 0;
+  margin-bottom: 12px; /* Có thể điều chỉnh nét dày */
+}
+
+.philosophy-card strong {
+  font-size: 1.05rem;
+  color: #1e1e1e;
+  display: block;
+  margin-bottom: 10px;
+  
+}
+
+.philosophy-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* === Expertise Tags === */
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expertise-tags span {
+  background-color: #f4f4f4;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.expertise-tags span:hover {
+  background-color: #e0e0e0;
+}
+
+/* === Footer === */
+.footer-modern {
+  padding: 40px 40px;
+  border-top: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-wrapper {
+  margin-top: auto; /* ✅ Đẩy footer xuống đáy */
+  background-color: #fff;
+  width: 100%;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-copy {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-social a:hover {
+  color: #706DBE;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-container {
+    padding: 60px 20px;
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
+  .footer-modern {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+  
+}
