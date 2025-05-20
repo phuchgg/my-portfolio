@@ -111,7 +111,7 @@ function About() {
           </div>
           <div className="footer-social">
             <a href="https://www.linkedin.com/in/phuc-hgg/">LinkedIn</a>
-            <a href="https://github.com/?ref=github.co">GitHub</a>
+            <a href="https://github.com/phuchgg">GitHub</a>
             <a href="https://zalo.me/0704428062">Zalo</a>
           </div>
         </div>
