@@ -40,9 +40,11 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 64px;
+  height: 56px;
   display: flex;
   align-items: center;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .navbar-inner {
@@ -54,10 +56,10 @@ body {
 
 .logo {
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--text-dark);
   text-decoration: none;
-  line-height: 64px;
+  line-height: 56px;
 }
 
 .nav-links {
@@ -65,12 +67,14 @@ body {
   gap: 25px;
 }
 
+
+
 .nav-links a {
   color: var(--text-dark);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
   transition: color 0.2s;
-  line-height: 44px;
+  line-height: 34px;
 }
 
 
@@ -217,7 +221,7 @@ body {
 
 /* === Logo Image === */
 .logo-image {
-  height: 60px;
+  height: 42px;
   width: auto;
   display: block;
   cursor: pointer;
@@ -367,3 +371,5 @@ body {
   padding-right: 0 !important;
 }
 }
+
+
