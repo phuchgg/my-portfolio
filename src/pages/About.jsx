@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/About.css";
 import { FaBook, FaQuestionCircle, FaUsers, FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo from '../images/logo.png';
 
 function About() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +12,9 @@ function About() {
       {/* Header */}
       <header className="navbar">
         <div className="section-container navbar-inner">
-          <div className="logo">Teacher Max</div>
+          <Link to="/">
+                      <img src={logo} alt="Teacher Max Logo" className="logo-image" />
+                    </Link>
 
           <div
             className={`menu-toggle ${isMenuOpen ? "open" : ""}`}

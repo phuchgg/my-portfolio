@@ -4,6 +4,7 @@ import '../css/contact.css';
 import { Link } from 'react-router-dom';
 import { MdEmail, MdPhone, MdLocationOn, MdWork } from 'react-icons/md';
 import { FiGlobe } from 'react-icons/fi';
+import logo from '../images/logo.png';
 
 function Contact() {
   const form = useRef();
@@ -29,7 +30,9 @@ function Contact() {
       {/* === Navbar === */}
       <header className="navbar">
         <div className="section-container navbar-inner">
-          <div className="logo">Teacher Max</div>
+                    <Link to="/">
+            <img src={logo} alt="Teacher Max Logo" className="logo-image" />
+          </Link>
 
           <div
             className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}

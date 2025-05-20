@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../css/index.css";
+import logo from '../images/logo.png'
 
 function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +12,9 @@ function Home() {
       {/* === Navbar === */}
       <header className="navbar">
         <div className="section-container navbar-inner full-width">
-          <div className="logo">Teacher Max</div>
+          <Link to="/">
+  <img src={logo} alt="Teacher Max Logo" className="logo-image" />
+</Link>
           <div
             className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}

@@ -70,7 +70,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
-  line-height: 64px;
+  line-height: 44px;
 }
 
 
@@ -207,9 +207,25 @@ body {
   transition: color 0.2s ease;
 }
 
+.logo-image.dark {
+  filter: brightness(0) invert(1);
+}
 
 .footer-social a:hover {
   color: #4318D1;
+}
+
+/* === Logo Image === */
+.logo-image {
+  height: 60px;
+  width: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
 }
 
 /* === RESPONSIVE === */
@@ -239,7 +255,9 @@ body {
     padding: 0 !important; /* đảm bảo nó override cái global */
   }
 
-  
+   .logo-image {
+    height: 32px;
+  }
 
   
   
