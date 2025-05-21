@@ -259,6 +259,11 @@ body {
     padding: 0 !important; /* đảm bảo nó override cái global */
   }
 
+  .navbar-inner.section-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  }
+
    .logo-image {
     height: 32px;
   }
@@ -365,7 +370,7 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1377px) {
   .navbar-inner.section-container {
   padding-left: 0 !important;
   padding-right: 0 !important;
